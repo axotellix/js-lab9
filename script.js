@@ -147,5 +147,45 @@ console.log('\n');
 
 
 
+/* [ TASK 4 > Multiply matrix ] */
 
+console.group(`Задание 4:`);
+
+const matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+
+// multiply > each element
+const multMatrix = (m, matr) => {
+
+    // print > original matrix
+    console.log('Исходная матрица');
+    for(let row of matr) {
+        console.log(row.join(', '));
+    }
+
+
+    let x = matr[0].length;         //: number of rows
+    let y = matr[0][0].length;      //: number of columns
+
+    for(let row of matr) {
+        for(let n in row) {
+            row[n] *= m;            // multiply > element
+        }
+    }
+
+
+    // print > multiplied matrix
+    console.log('Матрица, умноженная на ', m);
+    for(let row of matr) {
+        console.log(row.join(', '));
+    }
+}
+
+multMatrix(2, matrix);
+
+console.groupEnd();
+console.log('\n');
 
