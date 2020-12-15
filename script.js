@@ -110,3 +110,42 @@ console.log('\n');
 
 
 
+/* [ TASK 3 > Check if a string is a palindrome ] */
+
+let str1 = "радар";     //: palindrome 
+let str2 = "кукла";     //: not palindrome 
+
+console.group(`Задание 3:`);
+
+function checkPalindrome(str) {
+    let str_first = [];  // store > first part of a string
+    let str_last = [];   // store > rest part of a string
+
+    const skip = ( str.length % 2 != 0 ) ? ( Math.ceil(str.length / 2) - 1 ) : null;
+
+    for(let i = 0; i < str.length; i++) {
+        if(i == skip) continue;
+        else if(i < str.length / 2) {       // check > first part
+            str_first.push(str[i]);         // save > first part in normal order
+        } else {
+            str_last.unshift(str[i]);       // save > reversed last part 
+        }
+    }
+    let difference = Boolean(str_first.filter(l => !str_last.includes(l)).length);
+
+    //: if no difference between "first" & "last" parts - palindrome
+    if(!difference) console.log(`Слово ${str} - палиндром`);
+    else console.log(`Слово ${str} - не палиндром`);
+    
+} 
+
+checkPalindrome(str1);
+checkPalindrome(str2);
+
+console.groupEnd();
+console.log('\n');
+
+
+
+
+
