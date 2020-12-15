@@ -84,3 +84,29 @@ console.log(`Цена билета: ${price}`);
 console.groupEnd();
 console.log('\n');
 
+
+
+/* [ TASK 2 > Print: "last element" & "array without last" ] */
+
+let arr = [1, 2, 3, 4, 5]; 
+
+console.group(`Задание 2:`);
+
+// @function > print: "last element" & "array without last"
+const sliceArr = array => {
+   for(let i = array.length; i > 0; i--) {
+       if(i == 1) { 
+           console.log(array[0]);
+       } else {
+           console.log(`${array.pop()}, оставшиеся элементы: ${array.join(', ')}`);
+        }
+   } 
+};
+
+sliceArr(arr);
+
+console.groupEnd();
+console.log('\n');
+
+
+
